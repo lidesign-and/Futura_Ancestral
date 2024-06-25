@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+html{
+    scrollbar-width: none;
+}
+
+main{
+    width: 100vw;
+}
+
+#carruselMayoras{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+}
+
+#carruselMayoras article{
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    transition: all 1s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#carruselMayoras article:hover{
+    cursor: crosshair;
+    width: 70vw;
+    filter: contrast(120%);
+}
+
+#carruselMayoras article:hover .fotoMayora>img{
+    mix-blend-mode: normal;
+    filter: grayscale(0%);
+}
+
+.fotoMayora{
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+.paola{
+    background-color: #2ec9ec;
+}
+
+.paola img{
+    object-position: 55%;
+}
+
+.estela{
+    background-color: #8ad33c;
+}
+
+.helena{
+    background-color: #f855c2;
+}
+
+.helena img{
+    object-position: 49%;
+}
+
+.alicia{
+    background-color: #16ca70;
+}
+
+.alicia>img{
+    object-position: 22%;
+}
+
+.elvira{
+    background-color: #e6f337;
+    transition: all 1s ease;
+}
+
+.elvira img{
+    object-position: 53%;
+}
+
+.fotoMayora img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%);
+}
+
+.caracterMayora{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: right;
+    padding: 15px 0px;
+}
+
+.caracterMayora h2{
+    font-size: 2.2rem;
+    font-weight: 200;
+    color: #fff;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-family: "Fraunces", serif;
+    font-weight: 400;
+}
+
+#carruselMayoras article:hover .caracterMayora{
+    opacity: .7;
+}
+
+.resumenMayora{
+    z-index: 2;
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 300px;
+    height: 500px;
+    opacity: 0;
+    padding: 20px;
+    background: linear-gradient(#00000000, #00000098 10% 90%, #00000000);
+    transition: opacity 1s ease-in-out;
+    transition-delay: 2s;
+}
+
+#carruselMayoras article:hover .resumenMayora{
+    opacity: 1;
+}
+
+.resumenMayora div{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    color: #ffffff;
+}
+
+.resumenMayora h3{
+    font-family: "Fraunces", serif;
+    font-size: 1.5rem;
+}
+
+.resumenMayora p{
+    font-family: "Raleway", sans-serif;
+    font-size: .9rem;
+}
+
+.resumenMayora a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    right: 5px;
+    bottom: 15px;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.textocuratorial{
+    display: flex;
+    gap: 40px;
+    width: 90vw;
+    margin: auto;
+    padding: 120px 0px 40px;
+}
+
+.textocuratorial h1{
+    flex: 1;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    font-family: "Fraunces", serif;
+    align-content: center;
+    text-align: right;
+}
+
+.textocuratorial h3{
+    flex: 1;
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+    
+}
+
+.textocuratorial strong{
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+}
+
+.resumenproyecto{
+    width: 80vw;
+    margin: auto;
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+}
+
+.resumenproyecto h2{
+    width: 100%;
+    margin: auto;
+    padding: 100px 0 100px;
+    font-family: "Fraunces", serif;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.resumenproyecto strong{
+    font-family: "Fraunces", serif;
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: 600;
+}
+
+.resumenproyecto img{
+    width: 45%;
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 35%;
+}
+
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        translate: 0 100px;
+        scale: .8;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+        scale: 1;
+    }
+}
+
+.resumendescripcion{
+    padding-bottom: 100px;
+}
+
+.equipo{
+    width: 100vw;
+    padding: 20vw 10vw;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    gap: 15px;
+}
+
+.equipo article{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.equipo article:last-child{
+    width: 350px;
+    height: 350px;
+}
+
+.equipo img{
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.equipo h4{
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: "Fraunces", serif;
+    text-align: center;
+}
+
+.equipo h5{
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1rem;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+
+@media (max-width: 768px){
+    #carruselMayoras{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #carruselMayoras article{
+        width: 100%;
+        height: 20vh;
+        transition: all 1s ease;
+        position: relative;
+    }
+
+    #carruselMayoras article:hover{
+        cursor: crosshair;
+        width: 100vw;
+        height: 150vh;
+        filter: contrast(120%);
+    }
+
+    .caracterMayora{
+        padding: 5px 15px;
+    }
+
+    .caracterMayora h2{
+        font-size: 1.5rem;
+        font-weight: 200;
+        color: #fff;
+        writing-mode: initial;
+        transform: rotate(0deg);
+    }
+
+    .textocuratorial{
+        flex-direction: column;
+        padding-top: 200px;
+    }
+
+    .textocuratorial h1{
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .resumenproyecto{
+        padding-bottom: 50px;
+    }
+
+    .resumenproyecto h2{
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        padding: 100px 0px;
+    }
+
+    .resumenproyecto strong{
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+
+    .resumenproyecto img{
+        width: 100%;
+    }
+}
